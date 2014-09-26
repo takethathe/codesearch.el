@@ -112,7 +112,7 @@
   "Update an existing index."
   (interactive)
   (let ((process-environment (copy-alist process-environment)))
-    (setenv "CSEARCHINDEX" codesearch-csearchindex)
+    (setenv "CSEARCHINDEX" (expand-file-name codesearch-csearchindex))
     (start-process "cindex" "*codesearch-index*" codesearch-cindex)))
 
 (provide 'codesearch)
